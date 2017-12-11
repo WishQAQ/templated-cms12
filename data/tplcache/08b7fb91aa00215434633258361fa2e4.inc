@@ -1,0 +1,1 @@
+<a href="[field:typeurl /]">点击<span>详情</span></a>

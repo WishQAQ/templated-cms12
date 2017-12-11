@@ -1,0 +1,1 @@
+<li><a href="[field:typeurl /]"><img src="/skin/img/index_46.jpg">热门活动</a></li>

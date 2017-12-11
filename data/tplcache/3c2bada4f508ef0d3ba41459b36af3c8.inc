@@ -1,0 +1,1 @@
+<a href="[field:typeurl /]" style="color: #22ac38;">[field:typename /]</a>

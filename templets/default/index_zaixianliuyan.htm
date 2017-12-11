@@ -1,0 +1,255 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="/skin/css/webstyle.css" rel="stylesheet" type="text/css" />
+<title>哈尔滨蓝慕文化传媒有限公司</title>
+<script type="text/javascript">
+function newgdcode(obj,url) {
+	obj.src = url+ '&nowtime=' + new Date().getTime();//后面传递一个随机参数，否则在IE7和火狐下，不刷新图片
+}
+// 表单提交客户端检测
+function Isyx(yx){
+	var reyx= /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+	return(reyx.test(yx));
+	}
+function doSubmit(){
+	var Rname=document.getElementById("Rlc_name");
+	var Rtel=document.getElementById("Rlc_tel");
+	var Remail=document.getElementById("Rlc_email");
+	var Rtitle=document.getElementById("Rlc_title");
+	var Rcontent=document.getElementById("Rlc_content");
+	var Ryzm=document.getElementById("Ryzm");
+    if (document.myform.lc_name.value==""){
+        Rname.innerHTML="亲，请写姓名！";
+		Rname.style.color="red";
+        document.myform.lc_name.focus();
+        return false;
+    }
+    
+    if (document.myform.lc_name.value.length>5||document.myform.lc_name.value.length<1 ){
+        Rname.innerHTML="亲,您输入的姓名必须在1~5个字之间！";
+		Rname.style.color="red";
+        document.myform.lc_name.focus();
+        return false;
+    }
+    var reg =/(^0{0,1}1[3|4|5|6|7|8|9][0-9]{9}$)/; 
+    if (document.myform.lc_tel.value==""){
+        Rtel.innerHTML="亲，请写电话！";
+		Rtel.style.color="red";
+        document.myform.lc_tel.focus();
+        return false;
+    }
+    if(!reg.test(document.myform.lc_tel.value)){ 
+        Rtel.innerHTML="亲，请输入正确的电话！";
+		Rtel.style.color="red";
+        document.myform.lc_tel.focus();
+        return false; 
+     }
+    
+    if (document.myform.lc_email.value==""){
+        Remail.innerHTML="亲，请写邮箱！";
+		Remail.style.color="red";
+        document.myform.lc_email.focus();
+        return false;
+    }
+    if (!Isyx(document.myform.lc_email.value)){
+		 Remail.innerHTML="亲，请输入正确的邮箱地址！";
+		 Remail.style.color="red";
+		 document.myform.lc_email.value="";
+		 document.myform.lc_email.focus();
+		 return false;
+     }
+     
+    if (document.myform.lc_title.value==""){
+        Rtitle.innerHTML="亲，请填写您留言的标题！";
+		Rtitle.style.color="red";
+        document.myform.lc_title.focus();
+        return false;
+    }
+    if (document.myform.lc_content.value==""){
+        Rcontent.innerHTML="亲，请填写您的留言内容！";
+		Rcontent.style.color="red";
+        document.myform.lc_content.focus();
+        return false;
+    }
+    if (document.myform.yzm.value==""){
+        Ryzm.innerHTML="亲，请填写验证码！";
+		Ryzm.style.color="red";
+        document.myform.yzm.focus();
+        return false;
+    }
+}
+//数据填写验证
+function check_name(obj){
+	//验证 姓名
+	var name=obj.value;
+	var Rname=document.getElementById("Rlc_name");
+	if(name){
+		if(name.length>5 || name.length<1){
+			Rname.innerHTML="亲,您输入的姓名必须在1~5个字之间！";
+			Rname.style.color="red";
+			}else{
+				Rname.innerHTML="正确";
+				Rname.style.color="green";
+				}
+		}else{
+			Rname.innerHTML="亲，请写姓名！";
+			Rname.style.color="red";
+			}
+	}
+function check_tel(obj){
+	//验证 电话
+	var tel=obj.value;
+	var Rtel=document.getElementById("Rlc_tel");
+	if(tel){
+		var reg =/(^0{0,1}1[3|4|5|6|7|8|9][0-9]{9}$)/;
+		if(!reg.test(tel)){
+			Rtel.innerHTML="亲，请输入正确的电话！";
+			Rtel.style.color="red";
+			}else{
+				Rtel.innerHTML="正确";
+				Rtel.style.color="green";
+				}
+		}else{
+			Rtel.innerHTML="亲，请写电话！";
+			Rtel.style.color="red";
+			}
+	}
+function check_email(obj){
+	//验证 邮箱
+	var email=obj.value;
+	var Remail=document.getElementById("Rlc_email");
+	if(email){
+		if(!Isyx(email)){
+			Remail.innerHTML="亲，请输入正确的邮箱地址！";
+	 		Remail.style.color="red";
+			}else{
+				Remail.innerHTML="正确";
+				Remail.style.color="green";
+				}
+		}else{
+			Remail.innerHTML="亲，请写邮箱！";
+			Remail.style.color="red";
+			}
+	}
+function check_title(obj){
+	//验证 标题
+	var title=obj.value;
+	var Rtitle=document.getElementById("Rlc_title");
+	if(title){
+		Rtitle.innerHTML="正确";
+		Rtitle.style.color="green";
+		}else{
+			Rtitle.innerHTML="亲，请填写您留言的标题！";
+			Rtitle.style.color="red";
+			}
+	}
+function check_content(obj){
+	//验证 内容
+	var content=obj.value;
+
+	var Rcontent=document.getElementById("Rlc_content");
+	if(content){
+		Rcontent.innerHTML="正确";
+		Rcontent.style.color="green";
+		}else{
+			Rcontent.innerHTML="亲，请填写您的留言内容！";
+			Rcontent.style.color="red";
+			}
+	}
+</script>
+</head>
+<body>
+  <!--头部 开始-->
+<script src="/skin/js/jquery-1.7.1.min.js"></script>
+<script src="/skin/js/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/skin/css/jquery.jslides.css" media="screen" />
+<script type="text/javascript" src="/skin/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="/skin/js/jquery.jslides.js"></script>
+<script type="text/javascript">
+function check_seachkey(){
+	var key=$("#seach_key").val();
+	if(!key){
+		alert("请输入查询的关键词！！！");
+		return false;
+		}
+	}
+$(function(){
+	$("#nav>ul>li").hover(function(){
+		$(this).find("ul").stop(true,true).show("600");
+		},function(){
+			$(this).find("ul").stop(true,true).hide("600");
+			});
+	$("#search").click(function(){
+		$("#show").fadeToggle();
+	});
+})
+</script>
+{dede:include filename="head.htm"/}
+<!--头部 结束--> 
+<!--index start-->
+<div class="contact min_w contact_back contact_foot">
+  <div class="system container">
+    <div class="theme_top"><span class="theme_01 fl" >{dede:field.typenameen /}</span> <span class="theme_03 fl"><span>{dede:field.typename /}</span><font>blossom glorious，we meet here<br>
+      绽放光彩,我们在这里相遇</font></span> </div>
+    <div class="cl"></div>
+    <div class="pro_pic main_ly" style="margin:20px 0; padding:20px 0;">
+    	<ul>
+        	<form action="/plus/diy.php" method="post" name="myform" onSubmit="return doSubmit()">
+                <input type="hidden" name="action" value="post" />
+                <input type="hidden" name="diyid" value="1" />
+                <input type="hidden" name="do" value="2" />
+          <li>
+            <div class="main_ly_t1">姓   名：</div>
+            <input type="text" name="name" id="name" class="main_bd" required onBlur="check_name(this)">
+            <div class="main_ly_t2"><span id="Rlc_name">必填，且在1~5个字之间</span></div>
+            <div class="cl"></div>
+          </li>
+          <li>
+            <div class="main_ly_t1">电   话：</div>
+            <input type="text" name="tel" id="tel" class="main_bd" required onBlur="check_tel(this)">
+            <div class="main_ly_t2"><span id="Rlc_tel">请按照正确格式填写，例150********</span></div>
+            <div class="cl"></div>
+          </li>
+          <li>
+            <div class="main_ly_t1">邮   箱：</div>
+            <input type="text" name="email" id="email" class="main_bd" required onBlur="check_email(this)">
+            <div class="main_ly_t2"><span id="Rlc_email">请按照正确邮箱格式填写，例：******@qq.com</span></div>
+            <div class="cl"></div>
+          </li>
+          <li>
+            <div class="main_ly_t1">标   题：</div>
+            <input type="text" name="title" id="title" class="main_bd" required onBlur="check_title(this)">
+            <div class="main_ly_t2"><span id="Rlc_title">请填写您留言的标题</span></div>
+            <div class="cl"></div>
+          </li>
+          <li>
+            <div class="main_ly_t1" style="padding:40px 0 0 0;">内   容：</div>
+            <textarea name="content" id="content" class="main_bd1" required onBlur="check_content(this)"></textarea><span id="Rlc_content"></span>
+            <div class="cl"></div>
+          </li>
+          
+          <li>
+            <div class="main_but">
+            <input type="hidden" name="dede_fields" value="name,text;tel,text;email,text;title,text;content,multitext" />
+            <input type="hidden" name="dede_fieldshash" value="b7147b55bb855a9ad395a50d9c487b50" /></table>
+              <input type="image" name="submit" id="submit" src="/skin/img/t2.jpg" class="fl">
+              <input type="reset" id="reset" style="margin-left:30px; height:35px; width:100px; border:0px; font-size:16px;" value="重    置">
+              <div class="cl"></div>
+            </div>
+          </li>
+          </form>
+        </ul>
+    </div>
+    <div class="cl"></div>
+  </div>
+</div>
+
+<!--index end--> 
+{dede:include filename="footer.htm"/}</div>
+<!-- body --> 
+<br>
+<br>
+</body>
+</html>

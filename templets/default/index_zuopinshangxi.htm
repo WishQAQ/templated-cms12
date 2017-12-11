@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="/skin/css/webstyle.css" rel="stylesheet" type="text/css" />
+
+<title>{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:global.cfg_description/}" />
+<script type="text/javascript" src="/skin/js/jquery.1.4.2-min.js"></script>
+<script type="text/javascript" src="/skin/js/png.js"></script>
+<script>
+PNG.fix('*');
+</script>
+</head>
+
+<body>
+<!--header start--> 
+{dede:include filename="head.htm"/} 
+<!--header end--> 
+
+<!--main start--> 
+<a name="top"></a>
+<div class="content">
+  <div class="main_tit rel"><span>{dede:field.typeid runphp='yes'}$ID = @me; $sql = "SELECT * FROM `dede_arctype` WHERE id=$ID";$query = mysql_query($sql);$row=mysql_fetch_array($query); $relID = "$row[reid]"; if($relID == 0) {@me = $row[typename];}else{$sql = "SELECT `typename` FROM `dede_arctype` WHERE id=$relID";$query = mysql_query($sql);$row=mysql_fetch_array($query); @me = $row[typename];}{/dede:field.typeid}</span>
+    <p>直击幸福现场查看《 {dede:type typeid='2'}<a href="[field:typeurl /]" style="color: #22ac38;">[field:typename /]</a>{/dede:type}》   点击这里查看《{dede:type typeid='5'}<a href="[field:typeurl /]" style="color: #e60012;">[field:typename /]</a>{/dede:type}》</p>
+  </div>
+  <div class="main_cla">
+    <div class="main_cla_list"> </div>
+    <div class="cl"></div>
+  </div>
+  <div class="main_list">
+    <ul>
+      {dede:arclist typeid='4'  titlelen='80' }
+      <li> <a href="[field:arcurl/]"><img src="[field:picname/]" width="388" height="593"></a>
+        <div class="main_list_tit">PHOTO NAME<br>
+          <b>[field:title/]</b><span class="fr">2016/08/05</span></div>
+        <div class="main_list_txt">
+          <h4> PHOTO DESCRIPTION</h4>
+          <p style="height:70px; overflow:hidden"></p>
+        </div>
+        <div><a href="[field:arcurl/]"><img src="/skin/img/main03.jpg"></a></div>
+      </li>
+      {/dede:arclist}
+    </ul>
+    <div class="direction cl">
+      <div class="tc"><a href="#top"><img src="/skin/img/main04.jpg"></a></div>
+      <div class="line"></div>
+    </div>
+  </div>
+  <div class="page cl tc">
+    <div class="clear"></div>
+  </div>
+</div>
+<a name="down"></a> 
+<!--main end--> 
+
+<!--footer start--> 
+{dede:include filename="footer.htm"/} 
+<!--footer end-->
+</body>
+</html>

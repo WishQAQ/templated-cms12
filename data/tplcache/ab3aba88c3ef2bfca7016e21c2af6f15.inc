@@ -1,0 +1,1 @@
+<a href="[field:typeurl /]">查看<span>作品</span></a>

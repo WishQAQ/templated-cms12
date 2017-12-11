@@ -1,0 +1,2 @@
+<li style="width:980px; height:45px; line-height:45px; float:left; font-size:16px;"><a href="[field:arcurl/]" style="color:#333;">[field:title/]</a></li>
+      <li style="width:200px; height:45px; line-height:45px; float:left; text-align:right; font-size:16px;">[field:pubdate function="MyDate('Y-m-d',@me)"/]</li>

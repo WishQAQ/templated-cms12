@@ -1,0 +1,1 @@
+<a href="[field:arcurl/]" class="a_bigImg"><img src="[field:picname/]" width="100%" height="538" alt="" /></a>

@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="/skin/css/webstyle.css" rel="stylesheet" type="text/css" />
+
+<title>{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:global.cfg_description/}" />
+<script type="text/javascript" src="/skin/js/jquery.1.4.2-min.js"></script>
+<script type="text/javascript" src="/skin/js/png.js"></script>
+<script>
+PNG.fix('*');
+</script>
+<script type="text/javascript">
+function newgdcode(obj,url) {
+	obj.src = url+ '&nowtime=' + new Date().getTime();//后面传递一个随机参数，否则在IE7和火狐下，不刷新图片
+}
+// 表单提交客户端检测
+function Isyx(yx){
+	var reyx= /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+	return(reyx.test(yx));
+	}
+function doSubmit(){
+	var Rname=document.getElementById("Rlc_name");
+	var Rtel=document.getElementById("Rlc_tel");
+	var Remail=document.getElementById("Rlc_email");
+	var Rtitle=document.getElementById("Rlc_title");
+	var Rcontent=document.getElementById("Rlc_content");
+	var Ryzm=document.getElementById("Ryzm");
+    if (document.myform.lc_name.value==""){
+        Rname.innerHTML="亲，请写姓名！";
+		Rname.style.color="red";
+        document.myform.lc_name.focus();
+        return false;
+    }
+    
+    if (document.myform.lc_name.value.length>5||document.myform.lc_name.value.length<1 ){
+        Rname.innerHTML="亲,您输入的姓名必须在1~5个字之间！";
+		Rname.style.color="red";
+        document.myform.lc_name.focus();
+        return false;
+    }
+    var reg =/(^0{0,1}1[3|4|5|6|7|8|9][0-9]{9}$)/; 
+    if (document.myform.lc_tel.value==""){
+        Rtel.innerHTML="亲，请写电话！";
+		Rtel.style.color="red";
+        document.myform.lc_tel.focus();
+        return false;
+    }
+    if(!reg.test(document.myform.lc_tel.value)){ 
+        Rtel.innerHTML="亲，请输入正确的电话！";
+		Rtel.style.color="red";
+        document.myform.lc_tel.focus();
+        return false; 
+     }
+    
+    if (document.myform.lc_email.value==""){
+        Remail.innerHTML="亲，请写邮箱！";
+		Remail.style.color="red";
+        document.myform.lc_email.focus();
+        return false;
+    }
+    if (!Isyx(document.myform.lc_email.value)){
+		 Remail.innerHTML="亲，请输入正确的邮箱地址！";
+		 Remail.style.color="red";
+		 document.myform.lc_email.value="";
+		 document.myform.lc_email.focus();
+		 return false;
+     }
+     
+    if (document.myform.lc_title.value==""){
+        Rtitle.innerHTML="亲，请填写您留言的标题！";
+		Rtitle.style.color="red";
+        document.myform.lc_title.focus();
+        return false;
+    }
+    if (document.myform.lc_content.value==""){
+        Rcontent.innerHTML="亲，请填写您的留言内容！";
+		Rcontent.style.color="red";
+        document.myform.lc_content.focus();
+        return false;
+    }
+    if (document.myform.yzm.value==""){
+        Ryzm.innerHTML="亲，请填写验证码！";
+		Ryzm.style.color="red";
+        document.myform.yzm.focus();
+        return false;
+    }
+}
+//数据填写验证
+function check_name(obj){
+	//验证 姓名
+	var name=obj.value;
+	var Rname=document.getElementById("Rlc_name");
+	if(name){
+		if(name.length>5 || name.length<1){
+			Rname.innerHTML="亲,您输入的姓名必须在1~5个字之间！";
+			Rname.style.color="red";
+			}else{
+				Rname.innerHTML="正确";
+				Rname.style.color="green";
+				}
+		}else{
+			Rname.innerHTML="亲，请写姓名！";
+			Rname.style.color="red";
+			}
+	}
+function check_tel(obj){
+	//验证 电话
+	var tel=obj.value;
+	var Rtel=document.getElementById("Rlc_tel");
+	if(tel){
+		var reg =/(^0{0,1}1[3|4|5|6|7|8|9][0-9]{9}$)/;
+		if(!reg.test(tel)){
+			Rtel.innerHTML="亲，请输入正确的电话！";
+			Rtel.style.color="red";
+			}else{
+				Rtel.innerHTML="正确";
+				Rtel.style.color="green";
+				}
+		}else{
+			Rtel.innerHTML="亲，请写电话！";
+			Rtel.style.color="red";
+			}
+	}
+function check_email(obj){
+	//验证 邮箱
+	var email=obj.value;
+	var Remail=document.getElementById("Rlc_email");
+	if(email){
+		if(!Isyx(email)){
+			Remail.innerHTML="亲，请输入正确的邮箱地址！";
+	 		Remail.style.color="red";
+			}else{
+				Remail.innerHTML="正确";
+				Remail.style.color="green";
+				}
+		}else{
+			Remail.innerHTML="亲，请写邮箱！";
+			Remail.style.color="red";
+			}
+	}
+function check_title(obj){
+	//验证 标题
+	var title=obj.value;
+	var Rtitle=document.getElementById("Rlc_title");
+	if(title){
+		Rtitle.innerHTML="正确";
+		Rtitle.style.color="green";
+		}else{
+			Rtitle.innerHTML="亲，请填写您留言的标题！";
+			Rtitle.style.color="red";
+			}
+	}
+function check_content(obj){
+	//验证 内容
+	var content=obj.value;
+	var Rcontent=document.getElementById("Rlc_content");
+	if(content){
+		Rcontent.innerHTML="正确";
+		Rcontent.style.color="green";
+		}else{
+			Rcontent.innerHTML="亲，请填写您的留言内容！";
+			Rcontent.style.color="red";
+			}
+	}
+</script>
+</head>
+
+<body>
+<!--header start--> 
+{dede:include filename="head.htm"/} 
+<!--header end--> 
+
+<!--main start--> 
+<a name="top"></a>
+<div class="content">
+  <div class="main_tit rel"><span>{dede:field.typeid runphp='yes'}$ID = @me; $sql = "SELECT * FROM `dede_arctype` WHERE id=$ID";$query = mysql_query($sql);$row=mysql_fetch_array($query); $relID = "$row[reid]"; if($relID == 0) {@me = $row[typename];}else{$sql = "SELECT `typename` FROM `dede_arctype` WHERE id=$relID";$query = mysql_query($sql);$row=mysql_fetch_array($query); @me = $row[typename];}{/dede:field.typeid}</span>
+    <p>直击幸福现场查看《 {dede:type typeid='2'}<a href="[field:typeurl /]" style="color: #22ac38;">[field:typename /]</a>{/dede:type}》   点击这里查看《{dede:type typeid='5'}<a href="[field:typeurl /]" style="color: #e60012;">[field:typename /]</a>{/dede:type}》</p>
+  </div>
+  <div class="main_cla">
+   
+    <div class="cl"></div>
+  </div>
+  <div class="main_list1">
+    <div id="gbook">
+      <ul>
+        <form action="/plus/diy.php" method="post" name="myform" onSubmit="return doSubmit()">
+          <input type="hidden" name="action" value="post" />
+          <input type="hidden" name="diyid" value="1" />
+          <input type="hidden" name="do" value="2" />
+          <input name="lanmu" type="hidden" value="10">
+          <li>姓&nbsp;&nbsp;&nbsp;名：
+            <input type="text" name="name" required onBlur="check_name(this)">
+            <span id="Rlc_name">必填，且在1~5个字之间</span></li>
+          <li>电&nbsp;&nbsp;&nbsp;话：
+            <input type="text" name="tel" required onBlur="check_tel(this)">
+            <span id="Rlc_tel">请按照正确格式填写，例150********</span></li>
+          <li>邮&nbsp;&nbsp;&nbsp;箱：
+            <input type="text" name="email" required onBlur="check_email(this)">
+            <span id="Rlc_email">请按照正确邮箱格式填写，例：******@qq.com</span></li>
+          <li>标&nbsp;&nbsp;&nbsp;题：
+            <input type="text" name="title" required onBlur="check_title(this)">
+            <span id="Rlc_title">请填写您留言的标题</span></li>
+          <li>内&nbsp;&nbsp;&nbsp;容：
+            <textarea name="content" required onBlur="check_content(this)"></textarea>
+            <span id="Rlc_content"></span></li>
+          <input type="hidden" name="dede_fields" value="name,text;tel,text;email,text;title,text;content,multitext" />
+          <input type="hidden" name="dede_fieldshash" value="0bbbdd55f93c31321ee7cce0af7cda98" />
+          </table>
+          <li>
+            <input type="submit" id="tijiao" value="提交">
+            <input type="reset" id="chongzhi" value="重置">
+          </li>
+        </form>
+      </ul>
+    </div>
+    <div class="direction cl">
+      <div class="tc"><a href="#top"><img src="/skin/img/main04.jpg"></a></div>
+      <div class="line"></div>
+    </div>
+  </div>
+</div>
+<!--main end--> 
+
+<!--footer start--> 
+{dede:include filename="footer.htm"/} 
+<!--footer end-->
+</body>
+</html>

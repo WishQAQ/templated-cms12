@@ -1,0 +1,1 @@
+<a href="[field:typeurl /]" style="color:#e60012">最新资讯</a>

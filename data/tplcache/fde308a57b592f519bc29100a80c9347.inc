@@ -1,0 +1,1 @@
+<li><a href="[field:typeurl /]"><img src="/skin/img/index_45.jpg">样片系列</a></li>

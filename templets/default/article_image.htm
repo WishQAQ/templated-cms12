@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<link href="/skin/css/webstyle.css" rel="stylesheet" type="text/css" />
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field.keywords/}" />
+<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+
+<script type="text/javascript" src="/skin/js/jquery.1.4.2-min.js"></script>
+<script type="text/javascript" src="/skin/js/png.js"></script>
+<script>
+PNG.fix('*');
+</script>
+
+<!--图片效果-->
+<link href="/skin/css/2lj27.css" rel="stylesheet" type="text/css" />
+<link href="/skin/css/2lj29.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/skin/js/2lj1.js"></script>
+<script type="text/javascript" src="/skin/js/2lj9.js"></script>
+</head><body>
+<!--header start--> 
+{dede:include filename="head.htm"/} 
+<!--header end--> 
+
+<!--main start-->
+
+<div class="content">
+<div class="main_tit rel"><span>{dede:field.typeid runphp='yes'}$ID = @me; $sql = "SELECT * FROM `dede_arctype` WHERE id=$ID";$query = mysql_query($sql);$row=mysql_fetch_array($query); $relID = "$row[reid]"; if($relID == 0) {@me = $row[typename];}else{$sql = "SELECT `typename` FROM `dede_arctype` WHERE id=$relID";$query = mysql_query($sql);$row=mysql_fetch_array($query); @me = $row[typename];}{/dede:field.typeid}</span>
+  <p>直击幸福现场查看《 {dede:type typeid='2'}<a href="[field:typeurl /]" style="color: #22ac38;">[field:typename /]</a>{/dede:type}》   点击这里查看《{dede:type typeid='5'}<a href="[field:typeurl /]" style="color: #e60012;">[field:typename /]</a>{/dede:type}》</p>
+</div>
+<div class="main_cla">
+  <div class="main_cla_tit"> {dede:type }<a href="[field:typelink/]" style="color:#333;"><span>All the series</span><br>
+    全部系列</a>{/dede:type}</div>
+  <div class="main_cla_list">
+    <ul>
+     {dede:channel  type ='son'  currentstyle="<li><a href='~typelink~' style='color:#e60012;'></span><br>~typename~</a> </li>" }
+        <li><a href="[field:typelink/]" ><span>[field:typenameen /]</span><br>
+          [field:typename/]</a></li>
+       {/dede:channel} 
+    </ul>
+  </div>
+  <div class="cl"></div>
+</div>
+<a name="top"></a>
+<div class="main_list">
+    <div class="main photo-channel" style="width:1200px;">
+      <div id="Article" style="width:1160px;;">
+        <div class="tool">
+          <div style="width:160px; float:left;"> <a name="pic"></a> <a class="up" href="javascript:;" title="上一张" onClick="showpic('pre')"><span>上一张</span></a><a class="next" href="javascript:;" onClick="showpic('next')" title="下一张"><span>下一张</span></a><span class="stat" id="picnum"></span> </div>
+          <div style="width:840px; height:35px; line-height:35px; float:left; text-align:center; font-size:14px;">{dede:field.title/}</div>
+        </div>
+        <div style="clear:both;"></div>
+        <div class="big-pic">
+          <div id="big-pic"></div>
+          <div class="photo_prev"><a id="photoPrev" title="&lt;上一页" class="btn_pphoto" target="_self" hidefocus="true" href="javascript:;" onClick="showpic('pre');"></a></div>
+          <div class="photo_next"><a id="photoNext" title="下一页&gt;"class="btn_nphoto" target="_self" hidefocus="true" href="javascript:;" onClick="showpic('next')"></a></div>
+          <a href="javascript:;" class="max" onClick="showpic('big');">查看原图</a>
+          <div id="endSelect" style="display: none;">
+            <div id="endSelClose" onClick="$('#endSelect').hide();"></div>
+            <div class="bg"></div>
+            <div class="E_Cont">
+              <p>您已经浏览完所有图片</p>
+            </div>
+          </div>
+        </div>
+      <div class="list-pic">
+        
+        <a href="javascript:;" onClick="showpic('pre')" class="pre-bnt"><span></span></a>
+        <div class="cont" style="position:relative">
+          <ul class="cont picbig" id="pictureurls"  style="position:absolute">
+            {dede:productimagelist}
+            <li style="margin-top:0px;">
+              <div class="img-wrap"><a href="javascript:;" hidefocus="true"><img src="[field:imgsrc/]" rel="[field:imgsrc/]" height="67"/></a></div>
+            </li>
+            {/dede:productimagelist}
+          </ul>
+        </div>
+        <a href="javascript:;" onClick="showpic('next')" class="next-bnt"><span></span></a>
+        
+           </div>
+        <style type="text/css">
+.img-wrap img{vertical-align:middle;}
+.img-wrap1 img{vertical-align:middle;}
+</style>
+     
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="/skin/js/2lj15.js"></script> 
+<a name="down"></a> 
+<!--main end--> 
+</div>
+<!--footer start--> 
+{dede:include filename="footer.htm"/} 
+<!--footer end-->
+</body>
+</html>

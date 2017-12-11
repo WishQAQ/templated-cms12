@@ -1,0 +1,218 @@
+<!doctype html>
+<html>
+<head>
+<!--
+                       (0 0)
+   +-------------oOO----(_)----------------+
+   |           Powered By 织梦猫           |
+   |            www.dedemao.com            |
+   |        E-mail:admin@dedemao.com       |
+   +--------------------------oOO----------+
+                      |__|__|
+                       || ||
+                      ooO Ooo
+-->
+<meta charset="utf-8">
+<link href="/skin/css/webstyle.css" rel="stylesheet" type="text/css" />
+<title>{dede:global.cfg_webname/}</title>
+<meta name="description" content="{dede:global.cfg_description/}" />
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<script type="text/javascript" src="/skin/js/jquery.1.4.2-min.js"></script>
+<script type="text/javascript" src="/skin/js/png.js"></script>
+<script>
+PNG.fix('*');
+</script>
+</head>
+
+<body>
+<!--header start--> 
+{dede:include filename="head.htm"/} 
+<!--header end--> 
+
+<!--index start--> 
+<script type="text/javascript">
+ $(document).ready(function(){
+   $(".fin ul li").hover(function(){    
+     $(this).siblings().find("i").addClass("opacity_bg");//鼠标滑过当前元素，找到他的同辈元素i,并为它加上opacity_bg类
+    },function(){     
+     $(this).siblings().find("i").removeClass("opacity_bg");//鼠标移出当前元素，到他的同辈元素i,并移除它加上opacity_bg类景
+    })
+  })
+</script>
+<style type="text/css">
+ .fin ul li{display:table;position:relative;}
+ i{display:block;width:100%;height:100%;position:absolute;left:0;top:0;}
+ .opacity_bg{background:#000;opacity:0.4;}
+</style>
+<div class="content">
+  <div class="hot">
+    <div class="en_tit tc fb">Hot main <span>activities</span></div>
+    <div class="tit tc fb"><a href="/?p=products_list&lanmu=3" style="color:#000;">热门活动</a></div>
+    <div class="text tc">I is a professional costume photography base Team with the best of photography and makeup modelling division let you feel&lt;br&gt;the most sincere the best quality service</div>
+    <div style="width:1200px; height:600px; margin:0 auto;" class="fin">
+      <style type="text/css">
+		.tp1 img{width:600px; height:600px;}
+		.tp2 img{width:598px; height:301px;}
+		.tp3 img{width:297px; height:294px;}
+		</style>
+      <ul>
+        {dede:type typeid='5'}
+        <li class="fl tp1"> <a href="[field:typeurl /]"><img src="/skin/img/20160628081118_12123.jpg" alt="" /><i class="this_bg"></i></a> </li>
+        {/dede:type}
+        {dede:type typeid='6'}
+        <li class="fr tp2" style="margin-bottom:5px;"> <a href="[field:typeurl /]"><img src="/skin/img/20160628081130_49586.jpg" alt="" /><i class="this_bg"></i></a> </li>
+        {/dede:type}
+        {dede:type typeid='12'}
+        <li class="fl tp3"> <a href="[field:typeurl /]"><img src="/skin/img/20160805025759_83377.jpg" alt="" /><i class="this_bg"></i></a> </li>
+        {/dede:type}
+        {dede:type typeid='11'}
+        <li class="fr tp3"><a href="[field:typeurl /]"><img src="/skin/img/20160628080824_18360.jpg" alt="" /><i class="this_bg"></i></a></li>
+        {/dede:type}
+      </ul>
+      <div class="cl"></div>
+    </div>
+  </div>
+  <div class="cl">
+    <div class="en_tit tc fb">Hot plate guest <span>appreciate</span></div>
+    {dede:type typeid='4'}
+    <div class="tit tc fb"><a href="[field:typeurl /]" style="color:#000;">热门样片&客片</a></div>
+    {/dede:type}
+    <div class="text tc">I is a professional costume photography base Team with the best of photography and makeup modelling division let you feel&lt;br&gt;the most sincere the best quality service</div>
+    <script type="text/javascript">
+		function tab(id){
+			var i;
+			for(i=1; i<=2; i++){
+				document.getElementById("title"+i).className="li_"+i+"_off";
+				document.getElementById("content"+i).style.display="none";
+				}
+				document.getElementById("title"+id).className="li_"+id+"_on";
+				document.getElementById("content"+id).style.display="block";
+			}
+		</script>
+    <div class="hot_cla">
+      <ul class="tabbtn" id="normaltab">
+        <li class="li_1_on" id="title1" onmousemove="tab(1)"><a href="javascript:void(0)">
+          <h2> goddess model </h2>
+          <h3>中国风古装摄影女神<span>样片系列</span></h3>
+          </a></li>
+        <li class="li_2_off" id="title2" onmousemove="tab(2)"><a href="javascript:void(0)">
+          <h2> Guest piece </h2>
+          <h3>中国风古装摄影女王<span>客片系列</span></h3>
+          </a></li>
+      </ul>
+      <div class="cl"></div>
+    </div>
+    <div class="tabcon" id="normalcon">
+      <div class="hot_con bg011" id="content1">
+        <h2>Colourful domain photography <span>"Spring/summer 2016"</span></h2>
+        <h4>中国风古装摄影女神样片系列 <span>2016春夏 </span></h4>
+        <ul>
+          {dede:arclist typeid='16' row='14'  titlelen='80' }
+          <li><a href="[field:arcurl/]"><img src="[field:picname/]" width="163" height="231">
+            <p>[field:title/]</p>
+            </a></li>
+          {/dede:arclist}
+        </ul>
+        <style type="text/css">
+			.gg img{width:1153px;}
+			.te img{width:100%}
+			</style>
+        <div class="cl gg"><img src="/skin/img/20160628065151_83517.jpg" alt="" /></div>
+        <div class="hot_link">点击这里看更多 {dede:type typeid='2'}<a href="[field:typeurl /]">《[field:typename /]》</a>{/dede:type}　　直击幸福现场查看更多 {dede:type typeid='5'}<a href="[field:typeurl /]">《[field:typename /]》</a>{/dede:type}</div>
+      </div>
+      <div class="hot_con bg022" id="content2" style="display:none;">
+        <h2>Colourful domain photography <span>"Spring/summer 2016"</span></h2>
+        <h4>中国风古装摄影女王客片系列 <span>2016春夏 </span></h4>
+        <ul>
+          {dede:arclist typeid='5' row='14'  titlelen='80' }
+          <li><a href="[field:arcurl/]"><img src="[field:picname/]" width="163" height="231">
+            <p>[field:title/]</p>
+            </a></li>
+          {/dede:arclist}
+        </ul>
+        <div class="cl">
+          <div style="text-align:center;"> <img src="/skin/img/20160628063807_58996.jpg" alt="" /> </div>
+        </div>
+        <div class="hot_link">点击这里看更多 {dede:type typeid='2'}<a href="[field:typeurl /]">《[field:typename /]》</a>{/dede:type}　　直击幸福现场查看更多{dede:type typeid='5'}<a href="[field:typeurl /]">《[field:typename /]》</a>{/dede:type}</div>
+      </div>
+    </div>
+    <script type="text/javascript" src="/skin/js/jquery.tabso_yeso.js"></script> 
+    <script type="text/javascript">
+$(document).ready(function($){
+	$("#normaltab").tabso({
+		cntSelect:"#normalcon",
+		tabEvent:"click",
+		tabStyle:"normal"
+	});	
+});
+</script> 
+  </div>
+  <div class="cl" style="padding: 30px 0 0;">
+    <div class="en_tit tc fb">Understanding of Colourful domain <span>photography</span></div>
+    <div class="tit tc fb">全方位了解我们</div>
+    <div class="text tc">I is a professional costume photography base Team with the best of photography and makeup modelling division let you feel<br>
+      the most sincere the best quality service</div>
+    <div class="menu">
+      <div class="why">
+        <h3>预定套餐为何选择网络预订？</h3>
+        <p>在线沟通方便快捷、网络价位透明化，一目了然随时待命，一条龙服务！</p>
+        <a href="http://wpa.qq.com/msgrd?v=3&uin={dede:global.cfg_qq/}&site=qq&menu=yes" target="_blank">点击<span>预定</span></a> </div>
+      <div class="menu_list pos01">
+        <h4><b>服务报价</b></h4>
+        {dede:type typeid='3'}<a href="[field:typeurl /]">点击<span>查看</span></a> {/dede:type} </div>
+      <div class="menu_list pos02">
+        <h4><b>热门样片&客片</b></h4>
+        {dede:type typeid='4'} <a href="[field:typeurl /]">点击<span>详情</span></a> {/dede:type} </div>
+      <div class="menu_list pos03">
+        <h4><b>流程</b></h4>
+        <a href="http://wpa.qq.com/msgrd?v=3&uin={dede:global.cfg_qq/}&site=qq&menu=yes" target="_blank">点击<span>咨询</span></a> </div>
+      <div class="menu_list pos04">
+        <h4><b>作品赏析</b></h4>
+        {dede:type typeid='2'}<a href="[field:typeurl /]">查看<span>作品</span></a>{/dede:type} </div>
+      <div class="menu_list pos05">
+        <h4><b>24小时机制</b></h4>
+        <a href="http://wpa.qq.com/msgrd?v=3&uin={dede:global.cfg_qq/}&site=qq&menu=yes" target="_blank">在线<span>预约</span></a> </div>
+      <div class="menu_list pos06">
+        <h4><b>服务</b></h4>
+        <a href="http://wpa.qq.com/msgrd?v=3&uin={dede:global.cfg_qq/}&site=qq&menu=yes" target="_blank">点击预约</a> </div>
+    </div>
+  </div>
+  <div class="cl">
+    <div class="en_tit tc fb">changchun new <span>topic</span></div>
+    <div class="tit tc fb">本店特色主题</div>
+    <div class="text tc">I is a professional costume photography base Team with the best of photography and makeup modelling division let you feel&lt;br&gt;the most sincere the best quality service</div>
+    <div class="topic">
+      <ul>
+        {dede:arclist typeid='13' row='4'  titlelen='80' }
+        <li><a href="[field:arcurl/]"><img src="[field:picname/]" width="296" height="506">
+          <p>[field:title/]</p>
+          </a></li>
+        {/dede:arclist}
+      </ul>
+      <div class="cl"></div>
+    </div>
+  </div>
+</div>
+<div class="cl ts"><a href="#"><img src="/skin/img/20160627081114_55164.jpg" width="100%" alt="" /></a></div>
+<div class="content news">
+  <div class="news_tit">latest information/<b>{dede:type typeid='2'}<a href="[field:typeurl /]" style="color:#e60012">最新资讯</a>{/dede:type}</b></div>
+  <div class="news_list">
+    <ul>
+      {dede:arclist typeid='15' row='3'  titlelen='80' }
+      <li>
+        <h3>[field:title/]</h3>
+        <p>[field:description function="cn_substr(@me,180)"/]...</p>
+        <a href="[field:arcurl/]">详情查看&lt;more&gt;</a> <span>TIME:<br>
+        [field:pubdate function="MyDate('Y-m-d',@me)"/]</span> </li>
+      {/dede:arclist}
+    </ul>
+    <div class="cl"></div>
+  </div>
+</div>
+<!--index end--> 
+
+<!--footer start--> 
+{dede:include filename="footer.htm"/} 
+<!--footer end-->
+</body>
+</html>

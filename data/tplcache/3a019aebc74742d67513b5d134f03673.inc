@@ -1,0 +1,1 @@
+<li class="fr tp2" style="margin-bottom:5px;"> <a href="[field:typeurl /]"><img src="/skin/img/20160628081130_49586.jpg" alt="" /><i class="this_bg"></i></a> </li>

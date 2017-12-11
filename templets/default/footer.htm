@@ -1,0 +1,104 @@
+<div class="footer1">
+  <div class="content">
+    <div class="site_tit"><b>Site navigation</b> 站点导航</div>
+    <div class="site_list">
+      <ul>
+        <li><a href="/">
+          <div>
+            <p>HOME</p>
+            <span>首页</span> </div>
+          </a></li>
+        <li><a href="/?p=products_list&lanmu=1">
+          <div>
+            <p>PRODUCT</p>
+            <span>作品赏析</span> </div>
+          </a>
+          <ul class="subsite">
+            {dede:channelartlist typeid='2,0'}
+            <li><a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a></li>
+            {/dede:channelartlist}
+          </ul>
+        </li>
+        <li><a href="/?p=products_list&lanmu=2">
+          <div>
+            <p>SERVICE OFFERSS</p>
+            <span>服务报价</span> </div>
+          </a>
+          <ul class="subsite">
+            {dede:channelartlist typeid='3,0'}
+            <li><a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a></li>
+            {/dede:channelartlist}
+          </ul>
+        </li>
+        <li><a href="/?p=products_list&lanmu=3">
+          <div>
+            <p>POPULAR ACTIVITIES</p>
+            <span>热门活动</span> </div>
+          </a>
+          <ul class="subsite">
+            {dede:channelartlist typeid='5,6,7,0'}
+            <li><a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a></li>
+            {/dede:channelartlist}
+          </ul>
+        </li>
+        <li><a href="/?p=about&lanmu=4">
+          <div>
+            <p>ABOUT</p>
+            <span>关于我们</span> </div>
+          </a>
+          <ul class="subsite">
+            {dede:channelartlist typeid='8,0'}
+            <li><a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a></li>
+            {/dede:channelartlist}
+          </ul>
+        </li>
+        <li><a href="/?p=about&lanmu=5">
+          <div>
+            <p>OTHER</p>
+            <span>其他事项</span> </div>
+          </a>
+          <ul class="subsite">
+            {dede:channelartlist typeid='9,0'}
+            <li><a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a></li>
+            {/dede:channelartlist}
+          </ul>
+        </li>
+      </ul>
+      <div class="cl"></div>
+    </div>
+    <div class="friendlink cl">
+      <div class="fl" style="padding: 6px 0 0;"><img src="/skin/img/index_38.jpg"></div>
+      <div class="friendlink_list fr"><br />
+      </div>
+    </div>
+    <div class="share cl">
+      <ul>
+        <li><a target="_blank" href="http://v.t.sina.com.cn/share/share.php?&amp;title=分享到新浪微博&amp;"><img src="/skin/img/index_41.jpg">新浪微博</a></li>
+        <!--<li><a href=""><img src="/skin/img/index_42.jpg">联络微信</a></li>-->
+        <li><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={dede:global.cfg_qq/}&site=qq&menu=yes"><img src="/skin/img/index_43.jpg">联络 QQ</a></li>
+        <li><a><img src="/skin/img/index_44.jpg">{dede:global.cfg_dianhua/}&nbsp;</a></li>
+        {dede:type typeid='4'}
+        <li><a href="[field:typeurl /]"><img src="/skin/img/index_45.jpg">样片系列</a></li>
+        {/dede:type}
+        {dede:type typeid='5'}
+        <li><a href="[field:typeurl /]"><img src="/skin/img/index_46.jpg">热门活动</a></li>
+        {/dede:type}
+      </ul>
+      <div class="cl"></div>
+    </div>
+  </div>
+</div>
+<div class="copyright_bg">
+  <div class="content copyright">
+    <p> <span>{dede:global.cfg_powerby/}</span> </p>
+    <p>{dede:global.cfg_beian/} </p>
+  </div>
+</div>
+<div class="online_bg">
+  <div class="content rel">
+    <div class="online"><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={dede:global.cfg_qq/}&site=qq&menu=yes"><img src="/skin/img/index_48.png"></a></div>
+    <div class="telnum"><b><span>{dede:global.cfg_dianhua/}&nbsp;</span></b>
+      <p>TIME：24小时贴心服务</p>
+    </div>
+  </div>
+</div>
